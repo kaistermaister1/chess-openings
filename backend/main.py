@@ -28,7 +28,7 @@ CACHE_WRITES_ENABLED = os.getenv("OPENINGS_WRITE_CACHE", "0" if os.getenv("VERCE
 }
 DEFAULT_FRONTEND_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173"
 FRONTEND_ORIGINS = [
-    origin.strip()
+    origin.strip().rstrip("/")
     for origin in os.getenv("FRONTEND_ORIGINS", DEFAULT_FRONTEND_ORIGINS).split(",")
     if origin.strip()
 ]
